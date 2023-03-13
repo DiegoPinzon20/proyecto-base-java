@@ -42,11 +42,11 @@ dependencies {
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 
     implementation ("net.serenity-bdd:serenity-core:${serenityCoreVersion}")
-    implementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
 
+    implementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
