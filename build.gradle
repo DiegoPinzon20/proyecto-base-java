@@ -1,5 +1,16 @@
+buildscript {
+    ext.serenityCoreVersion = '3.3.0'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityCoreVersion")
+        classpath "net.serenity-bdd:serenity-single-page-report:$serenityCoreVersion"
+    }
+}
+
 plugins {
-    id "net.serenity-bdd.serenity-gradle-plugin" version "3.4.2"
+    id "net.serenity-bdd.serenity-gradle-plugin" version "${serenityCoreVersion}"
     id 'java'
     id 'eclipse'
     id 'idea'
@@ -21,13 +32,10 @@ repositories {
 }
 
 ext {
-    slf4jVersion = '1.7.7'
-    serenityCoreVersion = '3.4.2'
-    junitVersion = '5.8.1'
+    junitVersion = '5.8.2'
     logbackVersion = '1.2.10'
     lombokVersion = '1.18.22'
 }
-
 
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
@@ -57,10 +65,9 @@ test {
     systemProperties System.getProperties()
 }
 
-gradle.startParameter.continueOnFailure = true
-
 serenity {
     reports = ["single-page-html"]
 }
 
+gradle.startParameter.continueOnFailure = true
 test.finalizedBy(aggregate)
