@@ -8,6 +8,7 @@ public class LoginStepDefinitions {
 
     @Dado("que el usuario navega a la página de inicio de sesión")
     public void navegarPaginaInicioSesion() {
+        //Mi codigo en lenguaje JAva con la logica necesaria para ejecutar mi flujo automatizado
     }
 
     @Cuando("ingresa las credenciales de acceso correctas")
