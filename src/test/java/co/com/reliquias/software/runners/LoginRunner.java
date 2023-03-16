@@ -11,8 +11,8 @@ import org.junit.runners.JUnit4;
 //@RunWith(JUnit4.class)
 @CucumberOptions(
         features = "src/test/resources/features/login/inicio_sesion.feature",
-        glue = "co.com.reliquias.software.definitions", //POM
-//        glue = "co.com.reliquias.software.stepdefinitions", //Screenplay
+//        glue = "co.com.reliquias.software.definitions", //POM
+        glue = "co.com.reliquias.software.stepdefinitions", //Screenplay
         snippets = CucumberOptions.SnippetType.CAMELCASE, //navegarPaginaWeb
         plugin = "pretty",
         tags = "@InicioSesionExitoso"
