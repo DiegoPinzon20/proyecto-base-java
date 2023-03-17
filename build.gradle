@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityCoreVersion")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.4.2")
         classpath "net.serenity-bdd:serenity-single-page-report:$serenityCoreVersion"
     }
 }
@@ -66,6 +66,8 @@ test {
 }
 
 serenity {
+    testRoot = "co.com.reliquias.software.runners"
+    requirementsBaseDir = "src/test/resources/features"
     reports = ["single-page-html"]
 }
 
