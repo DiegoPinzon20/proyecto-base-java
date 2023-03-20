@@ -43,7 +43,8 @@ public class LoginSteps {
 
     @Step("access the system")
     public void accessSystem(){
-        loginPage.btnLogin.waitUntilClickable().click();
+//        loginPage.btnLogin.waitUntilClickable().click();
+        loginPage.getButtonByText("Sign In").waitUntilClickable().click();
     }
 
     @Step("validate successful login")
