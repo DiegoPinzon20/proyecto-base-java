@@ -33,7 +33,7 @@ repositories {
 
 ext {
     junitVersion = '5.8.2'
-    logbackVersion = '1.2.10'
+    logbackVersion = '1.4.5'
     lombokVersion = '1.18.22'
 }
 
