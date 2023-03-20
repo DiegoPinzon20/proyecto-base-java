@@ -1,7 +1,9 @@
 package co.com.reliquias.software.steps;
 
+import co.com.reliquias.software.pages.interacciones.GeneralInteraction;
 import co.com.reliquias.software.pages.interacciones.MainPageInteraction;
 import co.com.reliquias.software.pages.mapeos.LoginPage;
+import co.com.reliquias.software.pages.mapeos.MainPage;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 import org.slf4j.Logger;
@@ -11,12 +13,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class LoginSteps {
+public class LoginSteps extends GeneralInteraction {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginSteps.class);
 
     @Page
     private LoginPage loginPage;
+    @Page
+    private MainPage mainPage;
 
     @Page
     private MainPageInteraction mainPageInteraction;
@@ -51,6 +55,12 @@ public class LoginSteps {
     public void validateSuccessfulLogin() {
         final String mensajeError = "Login was unsuccessful.";
         assertThat(mensajeError, mainPageInteraction.getTitleMainPage(), is(equalTo("Dashboard")));
+        scrollToElement(mainPage.getButtonByText("Add"));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
