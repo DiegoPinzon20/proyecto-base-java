@@ -15,5 +15,5 @@ Característica: Actualizar perfil
       | nombre | apellido       | fechaNacimiento | pais           | genero |
       | Arnold | Schwarzenegger | 20/12/1947      | Estados Unidos | M      |
     Entonces debería ver el mensaje
-      | "Tu información se guardó correctamente" |
-      | "Información guardada con exito."        |
+      | Tu información se guardó correctamente |
+      | Información guardada con exito.        |
