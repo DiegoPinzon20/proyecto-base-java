@@ -4,7 +4,7 @@ import co.com.reliquias.software.pages.mapeos.MainPage;
 import net.thucydides.core.pages.PageObject;
 import org.fluentlenium.core.annotation.Page;
 
-public class MainPageInteraction extends PageObject {
+public class MainPageInteraction extends GeneralInteraction {
 
     @Page
     private MainPage mainPage;
