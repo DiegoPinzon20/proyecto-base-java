@@ -41,7 +41,7 @@ public class UpdateProfileWappiSteps {
         profileInformationWappiPage.txtName.type(profileModel.getNombre());
         profileInformationWappiPage.txtLastName.type(profileModel.getApellido());
         profileInformationWappiPage.txtBornDate.type(profileModel.getFechaNacimiento());
-        profileInformationWappiPage.getElementGenre(profileModel.getGenero()).click();
+        profileInformationWappiPage.getElementGender(profileModel.getGenero()).click();
         profileInformationWappiPage.countryDropdown.selectByVisibleText(profileModel.getPais());
         profileInformationWappiPage.btnSaveInformationProfile.click();
 

@@ -31,8 +31,8 @@ public class ProfileInformationWappiPage extends GeneralPage {
     @FindBy(xpath = "//div[@id='confirmation-modal']//p")
     public WebElementFacade txtUpdateResult;
 
-    public WebElement getElementGenre(String genre) {
-        return getDriver().findElement(By.id(genre));
+    public WebElement getElementGender(String gender) {
+        return getDriver().findElement(By.id(gender));
     }
 
 }
