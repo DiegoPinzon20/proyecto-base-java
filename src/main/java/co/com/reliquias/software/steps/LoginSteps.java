@@ -1,6 +1,5 @@
 package co.com.reliquias.software.steps;
 
-import co.com.reliquias.software.pages.interacciones.GeneralInteraction;
 import co.com.reliquias.software.pages.interacciones.MainPageInteraction;
 import co.com.reliquias.software.pages.mapeos.LoginPage;
 import co.com.reliquias.software.pages.mapeos.MainPage;
@@ -13,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class LoginSteps extends GeneralInteraction {
+public class LoginSteps {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginSteps.class);
 
@@ -55,7 +54,7 @@ public class LoginSteps extends GeneralInteraction {
     public void validateSuccessfulLogin() {
         final String mensajeError = "Login was unsuccessful.";
         assertThat(mensajeError, mainPageInteraction.getTitleMainPage(), is(equalTo("Dashboard")));
-        scrollToElement(mainPage.getButtonByText("Add"));
+        mainPageInteraction.scrollToElement(mainPage.getButtonByText("Add"));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
