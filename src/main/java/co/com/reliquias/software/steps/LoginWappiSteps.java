@@ -3,6 +3,7 @@ package co.com.reliquias.software.steps;
 import co.com.reliquias.software.pages.interacciones.GeneralInteraction;
 import co.com.reliquias.software.pages.mapeos.wappi.LoginWappiPage;
 import co.com.reliquias.software.pages.mapeos.wappi.MainWappiPage;
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 import org.slf4j.Logger;
@@ -34,6 +35,8 @@ public class LoginWappiSteps {
 
     @Step("enter credentials")
     public void enterCredentials(String username, String password) {
+        Serenity.setSessionVariable("username").to(username);
+        Serenity.setSessionVariable("password").to(password);
         loginWappiPage.inputUsername.type(username);
         loginWappiPage.inputPassword.type(password);
         LOGGER.atInfo().setMessage("enter credentials with username:{} and password:{}.").addArgument(username).addArgument(password).log();
@@ -47,7 +50,10 @@ public class LoginWappiSteps {
     @Step("validate successful login")
     public void validateSuccessfulLogin() {
         final String mensajeError = "Login was unsuccessful.";
+        String username = Serenity.sessionVariableCalled("username");
+        String password = Serenity.sessionVariableCalled("password");
         assertThat(mensajeError, mainWappiPage.txtTitleMainPage.waitUntilVisible().getText(), is(equalTo("Ofertas")));
+        LOGGER.info("Sesión con usuario '{}' y contraseña '{}'", username, password);
     }
 
 }
